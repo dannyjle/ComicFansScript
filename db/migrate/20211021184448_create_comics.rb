@@ -5,7 +5,7 @@ class CreateComics < ActiveRecord::Migration[6.1]
       t.integer :number
       t.integer :volume
       t.string :publisher
-      t.string :creator
+      t.string :writer
       t.string :description
 
       t.timestamps

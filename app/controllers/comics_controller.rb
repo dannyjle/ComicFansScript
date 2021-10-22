@@ -64,6 +64,6 @@ class ComicsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def comic_params
-      params.require(:comic).permit(:name, :number, :volume, :publisher, :creator)
+      params.require(:comic).permit(:name, :number, :volume, :publisher, :writer, :description)
     end
 end
