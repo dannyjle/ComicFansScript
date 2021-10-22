@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Comic.create([
+    { name: '', number: , volume: , publisher: '', creator: ''},
+    { name: '', number: , volume: , publisher: '', creator: ''}
+    ])

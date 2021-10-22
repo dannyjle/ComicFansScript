@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2021_10_21_184448) do
     t.integer "volume"
     t.string "publisher"
     t.string "creator"
+    t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
