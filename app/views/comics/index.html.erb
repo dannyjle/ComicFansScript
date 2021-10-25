@@ -1,30 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-  <h1 class="text-blue-500 mx-20 m-5 text-xl font-extrabold">Comics</h1>
-
-  <ul class="grid grid-cols-5 mx-5 mb-3"> 
-    <li>Name</li>
-    <li>Number</li>
-    <li>Volume</li>
-    <li>Writer</li>
+  <ul class="grid grid-cols-5 mb-2 mt-10 border-b-2"> 
+    <li class="ml-5">Name</li>
+    <li class="ml-5">Num.</li>
+    <li class="ml-6">Vol.</li>
+    <li class="ml-3">Writer</li>
   </ul>
 
-  <ul class="grid grid-cols-5">
+  <ul class="grid grid-cols-5 ml-5 m-5">
     <% @comics.each do |comic| %>
-      <li class="m-2"><%= comic.name %></li>
-      <li class="m-2"><%= comic.number %></li> 
-      <li class="m-2"><%= comic.volume %></li>
-      <li class="m-2"><%= comic.writer %></li>
-      <li>
-        <button name="more details button" class="m-2 xl:m-5 p-2 text-red-700 bg-yellow-300 
-          border-yellow-700 rounded hover:bg-yellow-200"><%= link_to '→', comic %>
-        </button>
-      </li>
+      <li class="border-b-2"><%= comic.name %></li>
+      <li class="border-b-2"><%= comic.number %></li> 
+      <li class="border-b-2"><%= comic.volume %></li>
+      <li class="border-b-2"><%= comic.writer %></li>
+      <li class="border-b-2 container flex justify-end text-blue-500 text-xl"> <%= link_to '→', comic %>
     <% end %> 
   </ul>
 
 <br>
 
-<button name="add new comic button" class="m-2 xl:m-5 p-1 text-blue-700 bg-red-400 
-          border-red-700 rounded hover:bg-red-500"> <%= link_to '+', new_comic_path %> </button>
 
+<button name="add new comic button" class="p-1 text-gray-200 bg-red-600 sm:rounded hover:bg-red-700 shadow container flex justify-center"> <%= link_to '+', new_comic_path %> </button>
