@@ -12,33 +12,33 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :name, "Name:"%><br>
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :number %>
+    <%= form.label :number, "Number:" %><br>
     <%= form.number_field :number %>
   </div>
 
   <div class="field">
-    <%= form.label :volume %>
+    <%= form.label :volume, "Volume:" %><br>
     <%= form.number_field :volume %>
   </div>
 
   <div class="field">
-    <%= form.label :publisher %>
+    <%= form.label :publisher, "Punlisher(s):" %><br>
     <%= form.text_field :publisher %>
   </div>
 
   <div class="field">
-    <%= form.label :writer %>
+    <%= form.label :writer , "Writer(s):" %><br>
     <%= form.text_field :writer %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
+    <%= form.label :description , "Description:" %><br>
+    <%= form.text_area :description, size: "40x2" %>
   </div>
 
   <div class="actions">
