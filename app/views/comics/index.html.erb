@@ -1,36 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="text-blue-500 mx-20">Comics</h1>
+<h1 class="text-blue-500 mx-20 m-5 text-xl font-extrabold">Comics</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Number</th>
-      <th>Volume</th>
-      <th>Publisher</th>
-      <th>Writer</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<ul class="grid grid-cols-5 mx-5 mb-3"> 
+    <li>Name</li>
+    <li>Number</li>
+    <li>Volume</li>
+    <li>Writer</li>
+</ul>
 
-  <tbody>
-    <% @comics.each do |comic| %>
-      <tr>
-        <td><%= comic.name %></td>
-        <td><%= comic.number %></td>
-        <td><%= comic.volume %></td>
-        <td><%= comic.publisher %></td>
-        <td><%= comic.writer %></td>
-        <td><%= comic.description %></td>
-        <td><%= link_to 'Show', comic %></td>
-        <td><%= link_to 'Edit', edit_comic_path(comic) %></td>
-        <td><%= link_to 'Destroy', comic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<ul class="grid grid-cols-5">
+  <% @comics.each do |comic| %>
+    <li class="m-2"><%= comic.name %></li>
+    <li class="m-2"><%= comic.number %></li> 
+    <li class="m-2"><%= comic.volume %></li>
+    <li class="m-2"><%= comic.writer %></li>
+    <li class="m-5"><%= link_to 'More', comic %></li>
+  <% end %>
+</ul>
 <br>
 
 <%= link_to 'New Comic', new_comic_path %>

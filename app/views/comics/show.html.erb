@@ -22,13 +22,14 @@
 
 <p>
   <strong>Writer:</strong>
-  <%= @comic.creator %>
+  <%= @comic.writer %>
 </p>
 
 <p>
   <strong>Description:</strong>
-  <%= @comic.creator %>
+  <%= @comic.description %>
 </p>
 
+<%= link_to 'Back', comics_path %> |
 <%= link_to 'Edit', edit_comic_path(@comic) %> |
-<%= link_to 'Back', comics_path %>
+<%= link_to 'Delete', comic_path(@comic.id), method: :delete, data: { confirm: 'Are you sure?' }%>
