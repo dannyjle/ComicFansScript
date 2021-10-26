@@ -1,23 +1,26 @@
-<p id="notice"><%= notice %></p>
+ <p id="notice"><%= notice %></p>
+ 
+ <h1 class="text-center border-b-2 border-t-2 p-2">Database</h1>
 
-  <ul class="grid grid-cols-5 mb-2 mt-10 border-b-2"> 
-    <li class="ml-5">Name</li>
-    <li class="ml-5">Num.</li>
-    <li class="ml-6">Vol.</li>
-    <li class="ml-3">Writer</li>
-  </ul>
+ <div class="container flex justify-center">
+  <div class="actions mt-5 mb-5 pl-10 pr-10 text-gray-200 bg-red-600 rounded 
+    hover:bg-red-700 shadow text-center "> <%= link_to 'Add', new_comic_path %> 
+  </div>
+</div>
 
-  <ul class="grid grid-cols-5 ml-5 m-5">
+<div class="container flex justify-center">
+  <ul class="p-5 m-5">
     <% @comics.each do |comic| %>
-      <li class="border-b-2"><%= comic.name %></li>
-      <li class="border-b-2"><%= comic.number %></li> 
-      <li class="border-b-2"><%= comic.volume %></li>
-      <li class="border-b-2"><%= comic.writer %></li>
-      <li class="border-b-2 container flex justify-end text-blue-500 text-xl"> <%= link_to '→', comic %>
+      <li class="font-bold pb-2">Name</li>
+      <li class="border-b-2 pl-10 italic"><%= comic.name %></li>
+      <li class="font-bold pb-2">Num.</li>
+      <li class="border-b-2 pl-10 italic"><%= comic.number %></li> 
+      <li class="font-bold pb-2">Vol.</li>
+      <li class="border-b-2 pl-10 italic"><%= comic.volume %></li>
+      <li class="font-bold pb-2">Writer</li>
+      <li class="border-b-2 pl-10 italic"><%= comic.writer %></li>
+      <li class="container flex justify-end text-blue-500 text-xl"> <%= link_to '→', comic %>
     <% end %> 
   </ul>
+</div>
 
-<br>
-
-
-<button class="p-1 text-gray-200 bg-red-600 sm:rounded hover:bg-red-700 shadow container flex justify-center"> <%= link_to 'Add', new_comic_path %> </button>
