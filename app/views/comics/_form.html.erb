@@ -13,38 +13,42 @@
     <% end %>
 
   <div class="field">
-    <%= form.label :name, "Name:"%><br>
+    <p class="font-bold"><%= form.label :name, "Name:"%></p>
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :number, "Number:" %><br>
+    <p class="font-bold"><%= form.label :number, "Number:" %></p>
     <%= form.number_field :number %>
   </div>
 
   <div class="field">
-    <%= form.label :volume, "Volume:" %><br>
+    <p class="font-bold"> <%= form.label :volume, "Volume:" %></p>
     <%= form.number_field :volume %>
   </div>
 
   <div class="field">
-    <%= form.label :publisher, "Punlisher(s):" %><br>
+    <p class="font-bold"><%= form.label :publisher, "Punlisher(s):" %></p>
     <%= form.text_field :publisher %>
   </div>
 
   <div class="field">
-    <%= form.label :writer , "Writer(s):" %><br>
+    <p class="font-bold"><%= form.label :writer , "Writer(s):" %></p>
     <%= form.text_field :writer %>
   </div>
 
   <div class="field">
-    <%= form.label :description , "Description:" %><br>
+    <p class="font-bold"><%= form.label :description , "Description:" %></p>
     <%= form.text_area :description, size: "40x2" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit class: "mt-5 mb-5 p-1 text-gray-200 bg-red-600 rounded 
-    hover:bg-red-700 shadow container flex justify-center" %>
+  <div class="container flex justify-center">
+    <div class="actions">
+      <%= form.submit class: "mt-5 mb-5 p-1 text-gray-800 bg-red-600 rounded border-b-2 border-l-2 border-red-800
+      hover:bg-gray-800 hover:text-gray-200 hover:border-black shadow container flex justify-center" %>
+    </div>
   </div>
+
   <% end %>
+  
 </div>

@@ -1,17 +1,17 @@
- <p id="notice"><%= notice %></p>
- 
- <h1 class="text-center border-b-2 border-t-2 p-2">Database</h1>
+<p id="notice"><%= notice %></p>
 
- <div class="container flex justify-center">
-  <div class="actions mt-5 mb-5 pl-10 pr-10 text-gray-200 bg-red-600 rounded 
-    hover:bg-red-700 shadow text-center "> <%= link_to 'Add', new_comic_path %> 
+<h1 class="text-center border-b-2 border-t-2 border-black font-bold p-2 italic">Collection</h1>
+ 
+<div class="container flex justify-center">
+  <div class="actions mt-5 mb-5 pl-10 pr-10 text-gray-800 bg-red-600 rounded border-b-2 border-l-2 border-red-800 
+    hover:bg-gray-800 hover:text-gray-200 hover:border-black shadow text-center"> <%= link_to 'Add New Comic', new_comic_path %> 
   </div>
 </div>
 
 <div class="container flex justify-center">
-  <ul class="p-5 m-5">
+  <ul class="p-5 m-5 rounded bg-gray-300">
     <% @comics.each do |comic| %>
-      <li class="font-bold pb-2">Name</li>
+      <li class="border-t-2 border-black font-bold pt-2 pb-2">Name</li>
       <li class="border-b-2 pl-10 italic"><%= comic.name %></li>
       <li class="font-bold pb-2">Num.</li>
       <li class="border-b-2 pl-10 italic"><%= comic.number %></li> 
@@ -19,7 +19,11 @@
       <li class="border-b-2 pl-10 italic"><%= comic.volume %></li>
       <li class="font-bold pb-2">Writer</li>
       <li class="border-b-2 pl-10 italic"><%= comic.writer %></li>
-      <li class="container flex justify-end text-blue-500 text-xl"> <%= link_to '→', comic %>
+      <div class="container flex justify-end border-b-2 border-black pt-5 pb-5">
+        <li class="actions text-gray-800 bg-blue-500 pt-1 pb-1 pl-3 pr-3 rounded border-b-2 border-l-2 border-blue-800
+		    hover:bg-gray-800 hover:text-gray-200 hover:border-black shadow"> <%= link_to '→', comic %>
+        </li>
+      </div>
     <% end %> 
   </ul>
 </div>

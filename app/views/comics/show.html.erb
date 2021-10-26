@@ -1,35 +1,49 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @comic.name %>
-</p>
+<p class="text-center border-b-2 border-t-2 border-black font-bold p-2 italic"> <%= @comic.name %> </p>
 
-<p>
-  <strong>Number:</strong>
-  <%= @comic.number %>
-</p>
 
-<p>
-  <strong>Volume:</strong>
-  <%= @comic.volume %>
-</p>
+<div class="container flex justify-center mt-5 mb-5">
+  <ul>
+    <li>
+      <p class="font-bold p-2">Number:</p>
+      <p class="pl-5 italic"> <%= @comic.number %> </p>
+    </li>
 
-<p>
-  <strong>Publisher:</strong>
-  <%= @comic.publisher %>
-</p>
+    <li>
+      <p class="font-bold p-2">Volume:</p>
+      <p class="pl-5 italic"> <%= @comic.volume %> </p>
+    </li>
 
-<p>
-  <strong>Writer:</strong>
-  <%= @comic.writer %>
-</p>
+    <li>
+      <p class="font-bold p-2">Publisher:</p>
+      <p class="pl-5 italic"> <%= @comic.publisher %> </p>
+    </li>
 
-<p>
-  <strong>Description:</strong>
-  <%= @comic.description %>
-</p>
+    <li>
+      <p class="font-bold p-2">Writer:</p>
+      <p class="pl-5 italic"> <%= @comic.writer %> </p>
+    </li>
 
-<%= link_to 'Back', comics_path %> |
-<%= link_to 'Edit', edit_comic_path(@comic) %> |
-<%= link_to 'Delete', comic_path(@comic.id), method: :delete, data: { confirm: 'Are you sure?' }%>
+
+    <li>
+      <p class="font-bold p-2">Description:</p>
+      <p class="pl-5 italic"> <%= @comic.description %> </p>
+    </li>
+  </ul>
+</div>
+
+<div class="container flex justify-center mb-5 pb-2">
+  <div class="actions mt-5 pl-8 pr-8 text-gray-800 bg-blue-500 rounded border-b-2 border-l-2 border-blue-800
+    hover:bg-gray-800 hover:text-gray-200 hover:border-black shadow text-center"> <%= link_to '↵', comics_path %>
+  </div>
+  <br>
+  <div class="actions mt-5 ml-5 mr-5 pl-5 pr-5 text-gray-800 bg-yellow-300 rounded border-b-2 border-l-2 border-yellow-500
+    hover:bg-gray-800 hover:text-gray-200 hover:border-black shadow text-center"> <%= link_to 'Edit', edit_comic_path(@comic) %> 
+  </div>
+  <br>
+  <div class="actions mt-5 pl-5 pr-5 text-gray-800 bg-red-600 rounded border-b-2 border-l-2 border-red-800
+    hover:bg-gray-800 hover:text-gray-200 hover:border-black shadow text-center"> 
+    <%= link_to 'Delete', comic_path(@comic.id), method: :delete, data: { confirm: 'Are you sure?' }%>
+  </div>  
+</div>

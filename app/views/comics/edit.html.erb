@@ -1,6 +1,14 @@
-<h1>Editing Comic</h1>
+<h1 class="text-center border-b-2 border-t-2 border-black p-2 font-bold italic mb-5">Editing Comic</h1>
 
 <%= render 'form', comic: @comic %>
 
-<%= link_to 'Show', @comic %> |
-<%= link_to 'Back', comics_path %>
+<div class="container flex justify-center pb-5">
+	<div class="actions mt-3 mr-1 pl-4 pr-4 text-gray-800 bg-blue-500 rounded border-b-2 border-l-2 border-blue-800
+  	hover:bg-gray-800 hover:text-gray-200 hover:border-black shadow text-center">
+    <%= link_to '↵', @comic %>
+  </div>
+
+  <div class="actions mt-3 ml-1 pl-1 pr-1 text-gray-800 bg-yellow-300 rounded border-b-2 border-l-2 border-yellow-500
+  	hover:bg-gray-800 hover:text-gray-200 hover:border-black shadow text-center"> <%= link_to 'Home', comics_path %>
+  </div>
+</div>
