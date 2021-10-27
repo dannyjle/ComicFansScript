@@ -1,15 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="text-center border-b-2 border-t-2 border-black font-bold p-2 italic">Collection</h1>
+
+<h1 class="p-2 mb-5 border-b-2 border-t-2 border-black text-center text-2xl font-bold italic">Collection</h1>
  
 <div class="container flex justify-center">
-  <div class="actions mt-5 mb-5 pl-10 pr-10 font-bold text-gray-800 bg-red-600 rounded border-b-2 border-l-2 border-red-800 
-    hover:bg-gray-800 hover:text-gray-200 hover:border-black shadow text-center"> <%= link_to 'Add New Comic', new_comic_path %> 
+  <div class="actions mt-5 mb-5 pl-10 pr-10 font-bold text-center text-gray-800 bg-yellow-300 rounded border-b-2 border-l-2 border-yellow-500
+    hover:bg-gray-800 hover:text-gray-200 hover:border-black shadow"> <%= link_to 'Add New Comic', new_comic_path %> 
   </div>
 </div>
 
 <div class="container flex justify-center">
-  <ul class="p-5 m-5 bg-gray-300">
+  <ul class="p-5 m-5 bg-gray-300 bg-opacity-90">
     <% @comics.each do |comic| %>
       <li class="border-t-2 border-black font-bold pt-2 pb-2">Name</li>
       <li class="border-b-2 pl-10 italic"><%= comic.name %></li>
