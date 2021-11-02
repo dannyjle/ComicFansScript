@@ -18,14 +18,15 @@
   </div>
 
   <div class="field">
+    <p class="font-bold"> <%= form.label :volume, "Volume:" %></p>
+    <%= form.number_field :volume %>
+  </div>
+  
+  <div class="field">
     <p class="font-bold"><%= form.label :number, "Number:" %></p>
     <%= form.number_field :number %>
   </div>
 
-  <div class="field">
-    <p class="font-bold"> <%= form.label :volume, "Volume:" %></p>
-    <%= form.number_field :volume %>
-  </div>
 
   <div class="field">
     <p class="font-bold"><%= form.label :publisher, "Punlisher(s):" %></p>
