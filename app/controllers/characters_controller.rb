@@ -17,6 +17,7 @@ class CharactersController < ApplicationController
 
   # GET /characters/1/edit
   def edit
+    @comic = @character.movie
   end
 
   # POST /characters or /characters.json

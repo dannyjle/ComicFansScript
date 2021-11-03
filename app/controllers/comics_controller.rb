@@ -8,6 +8,7 @@ class ComicsController < ApplicationController
 
   # GET /comics/1 or /comics/1.json
   def show
+    @characters = @comic.characters
   end
 
   # GET /comics/new
@@ -17,6 +18,7 @@ class ComicsController < ApplicationController
 
   # GET /comics/1/edit
   def edit
+    @comic = Comic.find(params[:id])
   end
 
   # POST /comics or /comics.json
