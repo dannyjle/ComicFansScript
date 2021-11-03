@@ -13,43 +13,43 @@
     <% end %>
 
     <div class="field">
-      <%= form.label :name %>
+      <p class="font-bold"><%= form.label :name , "Name:" %></p>
       <%= form.text_field :name %>
     </div>
 
     <div class="field">
-      <%= form.label :comic %>
+      <p class="font-bold"><%= form.label :comic , "Comic:" %></p>
       <%= form.text_field :comic %>
     </div>
 
     <div class="field">
-      <%= form.label :power %>
+      <p class="font-bold"><%= form.label :power , "Power:" %></p>
       <%= form.text_field :power %>
     </div>
 
     <div class="field">
-      <%= form.label :first_appearance , "First Appearance (Year):" %>
-      <%= form.text_field :first_appearance %>
+      <p class="font-bold"><%= form.label :first_appearance , "First Appearance (Year):" %></p>
+      <%= form.number_field :first_appearance %>
     </div>
 
     <div class="field">
-      <%= form.label :alter_ego , "Alter-Ego:" %>
+      <p class="font-bold"><%= form.label :alter_ego , "Alter-Ego:" %></p>
       <%= form.text_field :alter_ego %>
     </div>
 
     <div class="field">
-      <%= form.label :location , "Location:" %>
+      <p class="font-bold"><%= form.label :location , "Location:" %></p>
       <%= form.text_field :location %>
     </div>
 
     <div class="field">
-      <%= form.label :bio , "Bio:" %>
+      <p class="font-bold"><%= form.label :bio , "Bio:" %></p>
       <%= form.text_area :bio , size: "40x2" %>
     </div>
 
     <div class="container flex justify-center">
       <div class="actions">
-        <%= form.submit class: "font-bold mt-5 mb-5 p-1 text-gray-800 bg-red-600 rounded border-b-2 border-l-2 border-red-800
+        <%= form.submit class: "font-bold mt-5 mb-5 p-1 text-black bg-red-600 rounded border-b-2 border-l-2 border-red-800
         hover:bg-gray-800 hover:text-gray-200 hover:border-black shadow container flex justify-center" %>
       </div>
     </div>  
