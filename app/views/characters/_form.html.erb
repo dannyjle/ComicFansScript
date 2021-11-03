@@ -1,0 +1,52 @@
+<%= form_with(model: character) do |form| %>
+  <% if character.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(character.errors.count, "error") %> prohibited this character from being saved:</h2>
+
+      <ul>
+        <% character.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comic_id %>
+    <%= form.text_field :comic_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :power_id %>
+    <%= form.text_field :power_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :first_appearance %>
+    <%= form.text_field :first_appearance %>
+  </div>
+
+  <div class="field">
+    <%= form.label :alter_ego %>
+    <%= form.text_field :alter_ego %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location %>
+    <%= form.text_field :location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bio %>
+    <%= form.text_area :bio %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
