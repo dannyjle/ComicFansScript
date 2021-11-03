@@ -14,14 +14,16 @@ ActiveRecord::Schema.define(version: 2021_11_03_132159) do
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
-    t.integer "comic_id"
-    t.integer "power_id"
+    t.bigint "comic_id"
+    t.bigint "power_id"
     t.integer "first_appearance"
     t.string "alter_ego"
     t.string "location"
     t.text "bio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["comic_id"], name: "index_characters_on_comic_id"
+    t.index ["power_id"], name: "index_characters_on_power_id"
   end
 
   create_table "comics", force: :cascade do |t|
