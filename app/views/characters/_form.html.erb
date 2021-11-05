@@ -19,13 +19,17 @@
 
     <div class="field">
       <p class="font-bold"><%= form.label :comic , "Comic:" %></p>
-      <%= form.text_field :comic %>
+      <%= form.collection_select :comic_id, @comics, :id, :name %>
     </div>
 
-    <div class="field">
+    <%
+=begin%>
+ <div class="field">
       <p class="font-bold"><%= form.label :power , "Power:" %></p>
       <%= form.text_field :power %>
-    </div>
+    </div> 
+<%
+=end%>
 
     <div class="field">
       <p class="font-bold"><%= form.label :first_appearance , "First Appearance (Year):" %></p>
