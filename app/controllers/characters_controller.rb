@@ -20,6 +20,7 @@ class CharactersController < ApplicationController
   # GET /characters/1/edit
   def edit
     @comic = @character.comic
+    @comics = Comic.all
   end
 
   # POST /characters or /characters.json
@@ -31,7 +32,10 @@ class CharactersController < ApplicationController
         format.html { redirect_to @character, notice: "Character was successfully created!" }
         format.json { render :show, status: :created, location: @character }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { 
+          @comics = Comic.all
+          render :new, status: :unprocessable_entity 
+        }
         format.json { render json: @character.errors, status: :unprocessable_entity }
       end
     end
@@ -67,6 +71,6 @@ class CharactersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def character_params
-      params.require(:character).permit(:name, :comic, :first_appearance, :alter_ego, :location, :bio)
+      params.require(:character).permit(:name, :comic_id, :first_appearance, :alter_ego, :location, :bio)
     end
 end
