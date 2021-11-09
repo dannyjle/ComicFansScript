@@ -1,13 +1,10 @@
-<p id="notice"><%= notice %></p>
+<p id="notice" class="text-center italic"><%= notice %></p>
+
+<p class="p-2 mb-5 border-b-2 border-t-2 border-black text-center text-2xl font-bold italic"> <%= @character.name %> </p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @character.name %>
-</p>
-
-<p>
-  <strong>Comic:</strong>
-  <%= @character.comic_id %>
+  <strong>Alter ego:</strong>
+  <%= @character.alter_ego %>
 </p>
 
 <%
@@ -24,10 +21,6 @@
   <%= @character.first_appearance %>
 </p>
 
-<p>
-  <strong>Alter ego:</strong>
-  <%= @character.alter_ego %>
-</p>
 
 <p>
   <strong>Location:</strong>
@@ -39,5 +32,22 @@
   <%= @character.bio %>
 </p>
 
-<%= link_to 'Edit', edit_character_path(@character) %> |
-<%= link_to 'Back', characters_path %>
+<p>
+  <strong>Comic:</strong>
+  <%= @character.comic.name %>
+</p>
+
+<div class="container flex justify-center mb-5 pb-5">
+  <div class="actions font-bold mt-5 pl-8 pr-8 text-gray-800 bg-blue-500 rounded border-b-2 border-l-2 border-blue-800
+    hover:bg-gray-800 hover:text-gray-200 hover:border-black shadow text-center"> <%= link_to 'Back', characters_path %>
+  </div>
+<br>
+  <div class="actions font-bold mt-5 ml-5 mr-5 pl-5 pr-5 text-gray-800 bg-yellow-300 rounded border-b-2 border-l-2 border-yellow-500
+    hover:bg-gray-800 hover:text-gray-200 hover:border-black shadow text-center"> <%= link_to 'Edit', edit_character_path(@character) %>
+  </div>
+  <br>
+  <div class="actions font-bold mt-5 pl-5 pr-5 text-gray-800 bg-red-600 rounded border-b-2 border-l-2 border-red-800
+    hover:bg-gray-800 hover:text-gray-200 hover:border-black shadow text-center"> 
+<%= link_to 'Delete', character_path(@character.id), method: :delete, data: { confirm: 'Are you sure?' }%>
+  </div>
+</div>
