@@ -1,42 +1,47 @@
-<%= form_with(model: power) do |form| %>
-  <% if power.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(power.errors.count, "error") %> prohibited this power from being saved:</h2>
+<div class="container flex justify-center bg-gray-300 bg-opacity-90">  
+  <%= form_with(model: power) do |form| %>
+    <% if power.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(power.errors.count, "error") %> prohibited this power from being saved:</h2>
 
-      <ul>
-        <% power.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% power.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <p class="font-bold"> <%= form.label :name, "Name:" %> </p>
+      <%= form.text_field :name %>
+    </div>
+
+    <div class="field">
+      <p class="font-bold"> <%= form.label :category, "Power Catagory:" %> </p>
+      <%= form.text_field :category %>
+    </div>
+
+    <div class="field">
+      <p class="font-bold"> <%= form.label :description, "Descriptions:" %> </p>
+      <%= form.text_field :description %>
+    </div>
+
+    <div class="field">
+      <p class="font-bold"> <%= form.label :limitations, "Limitations:" %> </p>
+      <%= form.text_field :limitations %>
+    </div>
+
+    <div class="field">
+      <p class="font-bold"> <%= form.label :known_users, "Users:" %> </p>
+      <%= form.text_field :known_users %>
+    </div>
+
+  <div class="container flex justify-center">
+    <div class="actions">
+        <%= form.submit class: "font-bold mt-5 mb-5 p-1 text-black bg-red-600 rounded border-b-2 border-l-2 border-red-800
+        hover:bg-gray-800 hover:text-gray-200 hover:border-black shadow container flex justify-center" %>
+        </div>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :category %>
-    <%= form.text_field :category %>
-  </div>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :known_users %>
-    <%= form.text_field :known_users %>
-  </div>
-
-  <div class="field">
-    <%= form.label :limitations %>
-    <%= form.text_field :limitations %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

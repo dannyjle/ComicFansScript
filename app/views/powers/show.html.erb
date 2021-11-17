@@ -1,29 +1,27 @@
-<p id="notice"><%= notice %></p>
+<p id="notice" class="text-center italic"><%= notice %></p>
 
-<p>
-  <strong>Category:</strong>
-  <%= @power.category %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @power.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @power.description %>
-</p>
-
-<p>
-  <strong>Known users:</strong>
-  <%= @power.known_users %>
-</p>
-
-<p>
-  <strong>Limitations:</strong>
-  <%= @power.limitations %>
-</p>
+<div class="container flex justify-center p-5 bg-gray-300 bg-opacity-90">
+  <ul>
+    <li>
+      <p class="font-bold p-2">Name:</p>
+      <p class="pl-5 italic"><%= @power.name %> </p>
+    </li>
+    <li>
+      <p class="font-bold p-2">Power Catagory:</p>
+      <p class="pl-5 italic"><%= @power.category %> </p>
+    </li>
+    <li>
+      <p class="font-bold p-2">Description:</p>
+      <p class="pl-5 italic"><%= @power.description %> </p>
+    </li>
+    <li>
+      <p class="font-bold p-2">Limitations:</p>
+      <p class="pl-5 italic"><%= @power.limitations %> </p>
+    </li>
+    <li>
+      <p class="font-bold p-2">Users:</p>
+      <p class="pl-5 italic"><%= @power.known_users %> </p>
+    </li>
 
 <%= link_to 'Edit', edit_power_path(@power) %> |
 <%= link_to 'Back', powers_path %>

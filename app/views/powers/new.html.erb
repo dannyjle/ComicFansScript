@@ -1,5 +1,8 @@
-<h1>New Power</h1>
+<h1 class="p-2 mb-5 border-b-2 border-t-2 border-black text-center text-2xl font-bold italic">New Power</h1>
 
 <%= render 'form', power: @power %>
 
-<%= link_to 'Back', powers_path %>
+<div class="container flex justify-center pb-5">
+<%= link_to 'Back', powers_path , class: "actions font-bold mt-3 mr-1 pl-4 pr-4 text-black bg-blue-500 rounded border-b-2 border-l-2 border-blue-800 
+		hover:bg-gray-800 hover:text-white hover:border-black shadow text-center" %>
+</div>
