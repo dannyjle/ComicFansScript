@@ -5,7 +5,7 @@ class CharactersController < ApplicationController
   def index
     @characters = Character.all
     @comics = Comic.all
-    # @comic = Comic.find(params[:id])
+    @powers = Power.all
   end
 
   # GET /characters/1 or /characters/1.json         
