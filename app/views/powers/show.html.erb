@@ -18,10 +18,12 @@
       <p class="font-bold p-2">Limitations:</p>
       <p class="pl-5 italic"><%= @power.limitations %> </p>
     </li>
+    <% @characters.each do | character | %>
     <li>
       <p class="font-bold p-2">Users:</p>
-      <p class="pl-5 italic"><%= @power.known_users %> </p>
+      <p class="pl-5 italic"><%= link_to link_to character.name, character_path(character.id) %> </p>
     </li>
+    <% end %>
 
 <%= link_to 'Edit', edit_power_path(@power) %> |
 <%= link_to 'Back', powers_path %>

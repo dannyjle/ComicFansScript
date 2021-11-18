@@ -9,6 +9,7 @@ class PowersController < ApplicationController
 
   # GET /powers/1 or /powers/1.json
   def show
+    @characters = Character.all
   end
 
   # GET /powers/new
