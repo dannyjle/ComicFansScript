@@ -3,29 +3,31 @@
 <p class="p-2 mb-5 border-b-2 border-t-2 border-black text-center text-2xl font-bold italic"> <%= @comic.name %> </p>
 
 
-<div class="container flex justify-center p-5 bg-gray-300 bg-opacity-90">
-  <ul>
-    <li>
-      <p class="font-bold p-2">Volume:</p>
-      <p class="pl-5 italic"> <%= @comic.volume %> </p>
-    </li>
-    <li>
-      <p class="font-bold p-2">Number:</p>
-      <p class="pl-5 italic"> <%= @comic.number %> </p>
-    </li>
-    <li>
-      <p class="font-bold p-2">Publisher:</p>
-      <p class="pl-5 italic"> <%= @comic.publisher %> </p>
-    </li>
-    <li>
-      <p class="font-bold p-2">Writer:</p>
-      <p class="pl-5 italic"> <%= @comic.writer %> </p>
-    </li>
-    <li>
-      <p class="font-bold p-2">Description:</p>
-      <p class="pl-5 italic"> <%= @comic.description %> </p>
-    </li>
-  </ul>
+<div class="container flex justify-center">
+  <div class="p-5 m-5 bg-gray-300 bg-opacity-90">
+    <ul>
+      <li>
+        <p class="font-bold p-2">Volume:</p>
+        <p class="pl-5 italic"> <%= @comic.volume %> </p>
+      </li>
+      <li>
+        <p class="font-bold p-2">Number:</p>
+        <p class="pl-5 italic"> <%= @comic.number %> </p>
+      </li>
+      <li>
+        <p class="font-bold p-2">Publisher:</p>
+        <p class="pl-5 italic"> <%= @comic.publisher %> </p>
+      </li>
+      <li>
+        <p class="font-bold p-2">Writer:</p>
+        <p class="pl-5 italic"> <%= @comic.writer %> </p>
+      </li>
+      <li>
+        <p class="font-bold p-2">Description:</p>
+        <p class="pl-5 italic"> <%= @comic.description %> </p>
+      </li>
+    </ul>
+  </div>
 </div>
 
 <div class="container flex justify-center mb-5 pb-5">

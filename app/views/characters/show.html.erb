@@ -2,40 +2,31 @@
 
 <p class="p-2 mb-5 border-b-2 border-t-2 border-black text-center text-2xl font-bold italic"> <%= @character.name %> </p>
 
-<p>
-  <strong>Alter ego:</strong>
-  <%= @character.alter_ego %>
-</p>
+<div class="container flex justify-center">
+  <div class="p-5 m-5 bg-gray-300 bg-opacity-90">
+  <p>
+    <strong>Alter ego:</strong>
+    <%= @character.alter_ego %>
+  </p>
 
-<%
-=begin%>
- <p>
-  <strong>Power:</strong>
-  <%= @character.power_id %>
-</p> 
-<%
-=end%>
-
-<p>
-  <strong>First appearance:</strong>
-  <%= @character.first_appearance %>
-</p>
+  <p>
+    <strong>First appearance:</strong>
+    <%= @character.first_appearance %>
+  </p>
 
 
-<p>
-  <strong>Location:</strong>
-  <%= @character.location %>
-</p>
+  <p>
+    <strong>Location:</strong>
+    <%= @character.location %>
+  </p>
 
-<p>
-  <strong>Bio:</strong>
-  <%= @character.bio %>
-</p>
+  <p>
+    <strong>Bio:</strong>
+    <%= @character.bio %>
+  </p>
+  </div>
+</div>
 
-<p>
-  <strong>Comic:</strong>
-  <%= @character.comic.name %>
-</p>
 
 <div class="container flex justify-center mb-5 pb-5">
   <div class="actions font-bold mt-5 pl-8 pr-8 text-gray-800 bg-blue-500 rounded border-b-2 border-l-2 border-blue-800

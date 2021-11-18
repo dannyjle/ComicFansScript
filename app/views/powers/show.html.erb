@@ -1,11 +1,10 @@
 <p id="notice" class="text-center italic"><%= notice %></p>
 
-<div class="container flex justify-center p-5 bg-gray-300 bg-opacity-90">
+<p class="p-2 mb-5 border-b-2 border-t-2 border-black text-center text-2xl font-bold italic"> <%= @power.name %> </p></p>
+
+<div class="container flex justify-center">
+  <div class="p-5 m-5 bg-gray-300 bg-opacity-90">
   <ul>
-    <li>
-      <p class="font-bold p-2">Name:</p>
-      <p class="pl-5 italic"><%= @power.name %> </p>
-    </li>
     <li>
       <p class="font-bold p-2">Power Catagory:</p>
       <p class="pl-5 italic"><%= @power.category %> </p>
@@ -18,12 +17,30 @@
       <p class="font-bold p-2">Limitations:</p>
       <p class="pl-5 italic"><%= @power.limitations %> </p>
     </li>
-    <% @characters.each do | character | %>
-    <li>
-      <p class="font-bold p-2">Users:</p>
-      <p class="pl-5 italic"><%= link_to link_to character.name, character_path(character.id) %> </p>
-    </li>
+    <% @characters.map do | character | %>
+      <% if @power.character.id == character.id %>
+        <li>
+          <p class="font-bold p-2">Users:</p>
+          <p class="pl-5 italic"><%= link_to link_to character.name, character_path(character.id) %> </p>
+        </li>
+      <% end %>
     <% end %>
+  </div>
+</div>
 
-<%= link_to 'Edit', edit_power_path(@power) %> |
-<%= link_to 'Back', powers_path %>
+
+<div class="container flex justify-center mb-5 pb-5">
+  <div class="actions font-bold mt-5 pl-8 pr-8 text-gray-800 bg-blue-500 rounded border-b-2 border-l-2 border-blue-800
+    hover:bg-gray-800 hover:text-gray-200 hover:border-black shadow text-center"> <%= link_to 'Back', powers_path %>
+  </div>
+  <br>
+  <div class="actions font-bold mt-5 ml-5 mr-5 pl-5 pr-5 text-gray-800 bg-yellow-300 rounded border-b-2 border-l-2 border-yellow-500
+    hover:bg-gray-800 hover:text-gray-200 hover:border-black shadow text-center"> <%= link_to 'Edit', edit_power_path(@power) %> 
+  </div>
+  <br>
+  <div class="actions font-bold mt-5 pl-5 pr-5 text-gray-800 bg-red-600 rounded border-b-2 border-l-2 border-red-800
+    hover:bg-gray-800 hover:text-gray-200 hover:border-black shadow text-center"> 
+    <%= link_to 'Delete', power_path(@power.id), method: :delete, data: { confirm: 'Are you sure?' }%>
+  </div>  
+
+
