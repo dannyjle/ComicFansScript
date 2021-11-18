@@ -4,6 +4,7 @@ class PowersController < ApplicationController
   # GET /powers or /powers.json
   def index
     @powers = Power.all
+    @characters = Character.all
   end
 
   # GET /powers/1 or /powers/1.json
@@ -13,10 +14,13 @@ class PowersController < ApplicationController
   # GET /powers/new
   def new
     @power = Power.new
+    @characters = Character.all
   end
 
   # GET /powers/1/edit
   def edit
+    @character = @power.character
+    @powers = Power.all
   end
 
   # POST /powers or /powers.json
@@ -25,10 +29,10 @@ class PowersController < ApplicationController
 
     respond_to do |format|
       if @power.save
-        format.html { redirect_to @power, notice: "Power was successfully created." }
+        format.html { redirect_to @power, notice: "The power was successfully created." }
         format.json { render :show, status: :created, location: @power }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { @characters = Character.all render :new, status: :unprocessable_entity }
         format.json { render json: @power.errors, status: :unprocessable_entity }
       end
     end
@@ -38,7 +42,7 @@ class PowersController < ApplicationController
   def update
     respond_to do |format|
       if @power.update(power_params)
-        format.html { redirect_to @power, notice: "Power was successfully updated." }
+        format.html { redirect_to @power, notice: "The power was successfully updated." }
         format.json { render :show, status: :ok, location: @power }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,7 +55,7 @@ class PowersController < ApplicationController
   def destroy
     @power.destroy
     respond_to do |format|
-      format.html { redirect_to powers_url, notice: "Power was successfully destroyed." }
+      format.html { redirect_to powers_url, notice: "The power was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -64,6 +68,6 @@ class PowersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def power_params
-      params.require(:power).permit(:category, :name, :description, :known_users, :limitations)
+      params.require(:power).permit(:name, :category, :character_id, :description, :limitations, :known_users)
     end
 end

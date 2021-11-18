@@ -1,12 +1,12 @@
 class CreatePowers < ActiveRecord::Migration[6.1]
   def change
     create_table :powers do |t|
-      t.string :category
       t.string :name
-      t.string :description
+      t.string :category
+      t.belongs_to :character
+      t.text :description
+      t.text :limitations
       t.string :known_users
-      t.string :limitations
-
       t.timestamps
     end
   end

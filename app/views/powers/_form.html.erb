@@ -24,17 +24,17 @@
 
     <div class="field">
       <p class="font-bold"> <%= form.label :description, "Descriptions:" %> </p>
-      <%= form.text_field :description %>
+      <%= form.text_area :description, size: "40x2" %>
     </div>
 
     <div class="field">
       <p class="font-bold"> <%= form.label :limitations, "Limitations:" %> </p>
-      <%= form.text_field :limitations %>
+      <%= form.text_area :limitations, size: "40x2" %>
     </div>
 
     <div class="field">
       <p class="font-bold"> <%= form.label :known_users, "Users:" %> </p>
-      <%= form.text_field :known_users %>
+      <%= form.collection_select :character_id, @characters, :id, :name %>
     </div>
 
   <div class="container flex justify-center">

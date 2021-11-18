@@ -36,13 +36,15 @@ ActiveRecord::Schema.define(version: 2021_11_17_190439) do
   end
 
   create_table "powers", force: :cascade do |t|
-    t.string "category"
     t.string "name"
-    t.string "description"
+    t.string "category"
+    t.integer "character_id"
+    t.text "description"
+    t.text "limitations"
     t.string "known_users"
-    t.string "limitations"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["character_id"], name: "index_powers_on_character_id"
   end
 
 end
