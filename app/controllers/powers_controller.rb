@@ -19,8 +19,8 @@ class PowersController < ApplicationController
 
   # GET /powers/1/edit
   def edit
-    @character = @power.character
-    @powers = Power.all
+    @power = Power.find(params[:id])
+    @characters = Character.all
   end
 
   # POST /powers or /powers.json
