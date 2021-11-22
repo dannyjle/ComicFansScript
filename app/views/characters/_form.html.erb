@@ -22,15 +22,6 @@
       <%= form.collection_select :comic_id, @comics, :id, :name %>
     </div>
 
-    <%
-=begin%>
- <div class="field">
-      <p class="font-bold"><%= form.label :power , "Power:" %></p>
-      <%= form.text_field :power %>
-    </div> 
-<%
-=end%>
-
     <div class="field">
       <p class="font-bold"> <%= form.label :first_appearance , "First Appearance (Year):" %> </p>
       <%= form.number_field :first_appearance %>
@@ -49,6 +40,11 @@
     <div class="field">
       <p class="font-bold"> <%= form.label :bio , "Bio:" %> </p>
       <%= form.text_area :bio , size: "40x2" %>
+    </div>
+
+    <div class="field">
+      <p class="font-bold"><%= form.label :main_picture , "Character Image:" %></p>
+      <%= form.file_field :main_picture %>
     </div>
 
     <div class="container flex justify-center">

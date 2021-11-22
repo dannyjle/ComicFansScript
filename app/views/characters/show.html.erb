@@ -4,26 +4,32 @@
 
 <div class="container flex justify-center">
   <div class="p-5 m-5 bg-gray-300 bg-opacity-90">
-  <p>
-    <strong>Alter ego:</strong>
-    <%= @character.alter_ego %>
-  </p>
+    <p>
+      <strong>Alter ego:</strong>
+      <%= @character.alter_ego %>
+    </p>
 
-  <p>
-    <strong>First appearance:</strong>
-    <%= @character.first_appearance %>
-  </p>
+    <p>
+      <strong>First appearance:</strong>
+      <%= @character.first_appearance %>
+    </p>
 
 
-  <p>
-    <strong>Location:</strong>
-    <%= @character.location %>
-  </p>
+    <p>
+      <strong>Location:</strong>
+      <%= @character.location %>
+    </p>
 
-  <p>
-    <strong>Bio:</strong>
-    <%= @character.bio %>
-  </p>
+    <p>
+      <strong>Bio:</strong>
+      <%= @character.bio %>
+    </p>
+
+    <div class="container flex justify-center">
+      <% if @character.main_picture.attached? %>
+        <%= image_tag @character.main_picture%>
+      <% end %>
+    </div>
   </div>
 </div>
 
@@ -32,13 +38,13 @@
   <div class="actions font-bold mt-5 pl-8 pr-8 text-gray-800 bg-blue-500 rounded border-b-2 border-l-2 border-blue-800
     hover:bg-gray-800 hover:text-gray-200 hover:border-black shadow text-center"> <%= link_to 'Back', characters_path %>
   </div>
-<br>
+  <br>
   <div class="actions font-bold mt-5 ml-5 mr-5 pl-5 pr-5 text-gray-800 bg-yellow-300 rounded border-b-2 border-l-2 border-yellow-500
     hover:bg-gray-800 hover:text-gray-200 hover:border-black shadow text-center"> <%= link_to 'Edit', edit_character_path(@character) %>
   </div>
   <br>
   <div class="actions font-bold mt-5 pl-5 pr-5 text-gray-800 bg-red-600 rounded border-b-2 border-l-2 border-red-800
     hover:bg-gray-800 hover:text-gray-200 hover:border-black shadow text-center"> 
-<%= link_to 'Delete', character_path(@character.id), method: :delete, data: { confirm: 'Are you sure?' }%>
+    <%= link_to 'Delete', character_path(@character.id), method: :delete, data: { confirm: 'Are you sure?' }%>
   </div>
 </div>

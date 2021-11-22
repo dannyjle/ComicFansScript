@@ -27,6 +27,11 @@
         <p class="pl-5 italic"> <%= @comic.description %> </p>
       </li>
     </ul>
+    <div class="container flex justify-center">
+      <% if @comic.main_picture.attached? %>
+        <%= image_tag @comic.main_picture%>
+      <% end %>
+    </div>
   </div>
 </div>
 

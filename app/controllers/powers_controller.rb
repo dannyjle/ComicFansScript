@@ -69,6 +69,6 @@ class PowersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def power_params
-      params.require(:power).permit(:name, :category, :character_id, :description, :limitations, :known_users, :main_picture, uploads: [])
+      params.require(:power).permit(:name, :category, :character_id, :description, :limitations, :known_users, :main_picture)
     end
 end

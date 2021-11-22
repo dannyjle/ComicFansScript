@@ -37,6 +37,11 @@
       <%= form.collection_select :character_id, @characters, :id, :name %>
     </div>
 
+    <div class="field">
+      <p class="font-bold"><%= form.label :main_picture , "Power Image:" %></p>
+      <%= form.file_field :main_picture %>
+    </div>
+
   <div class="container flex justify-center">
     <div class="actions">
         <%= form.submit class: "font-bold mt-5 mb-5 p-1 text-black bg-red-600 rounded border-b-2 border-l-2 border-red-800

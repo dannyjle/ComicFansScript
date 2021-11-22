@@ -21,10 +21,15 @@
       <% if @power.character.id == character.id %>
         <li>
           <p class="font-bold p-2">Users:</p>
-          <p class="pl-5 italic"><%= link_to link_to character.name, character_path(character.id) %> </p>
+          <p class="pl-5 italic underline"><%= link_to link_to character.name, character_path(character.id) %> </p>
         </li>
       <% end %>
     <% end %>
+    <div class="container flex justify-center">
+      <% if @power.main_picture.attached? %>
+        <%= image_tag @power.main_picture%>
+      <% end %>
+    </div>
   </div>
 </div>
 
