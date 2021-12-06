@@ -3,7 +3,7 @@ class PowersController < ApplicationController
 
   # GET /powers or /powers.json
   def index
-    @powers = Power.all
+    @powers = Power.where(["name LIKE ?", "%#{params[:search]}%"])
     @characters = Character.all
   end
 

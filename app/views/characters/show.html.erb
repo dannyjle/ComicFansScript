@@ -4,6 +4,13 @@
 
 <div class="container flex justify-center">
   <div class="p-5 m-5 bg-gray-300 bg-opacity-90">
+
+    <div class="container flex justify-center">
+      <% if @character.main_picture.attached? %>
+        <%= image_tag @character.main_picture%>
+      <% end %>
+    </div>
+
     <p>
       <strong>Alter ego:</strong>
       <%= @character.alter_ego %>
@@ -25,11 +32,6 @@
       <%= @character.bio %>
     </p>
 
-    <div class="container flex justify-center">
-      <% if @character.main_picture.attached? %>
-        <%= image_tag @character.main_picture%>
-      <% end %>
-    </div>
   </div>
 </div>
 

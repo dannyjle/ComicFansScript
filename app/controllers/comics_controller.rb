@@ -3,7 +3,7 @@ class ComicsController < ApplicationController
 
   # GET /comics or /comics.json
   def index
-    @comics = Comic.all
+    @comics = Comic.where(["name LIKE ?", "%#{params[:search]}%"])
   end
 
   # GET /comics/1 or /comics/1.json

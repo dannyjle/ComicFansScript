@@ -6,6 +6,11 @@
 <div class="container flex justify-center">
   <div class="p-5 m-5 bg-gray-300 bg-opacity-90">
     <ul>
+      <div class="container flex justify-center">
+      <% if @comic.main_picture.attached? %>
+        <%= image_tag @comic.main_picture%>
+      <% end %>
+      </div>
       <li>
         <p class="font-bold p-2">Volume:</p>
         <p class="pl-5 italic"> <%= @comic.volume %> </p>
@@ -27,11 +32,6 @@
         <p class="pl-5 italic"> <%= @comic.description %> </p>
       </li>
     </ul>
-    <div class="container flex justify-center">
-      <% if @comic.main_picture.attached? %>
-        <%= image_tag @comic.main_picture%>
-      <% end %>
-    </div>
   </div>
 </div>
 

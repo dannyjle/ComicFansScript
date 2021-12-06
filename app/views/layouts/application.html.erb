@@ -11,11 +11,11 @@
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
-<%= render 'layouts/header'%>
-   <body class="bg-center bg-cover bg-no-repeat bg-fixed"
-   style="background-image:url(<%= image_url('background/comic-bg.png') %> )">
+    <%= render 'layouts/header'%>
+      <body class="bg-center bg-cover bg-no-repeat bg-fixed"
+      style="background-image:url(<%= image_url('background/comic-bg.png') %> )">
     <main class="container mx-auto bg-gray-300 bg-opacity-30">
-      <%= yield %>
+    <%= yield %>
     </main>
   </body>
 </html>

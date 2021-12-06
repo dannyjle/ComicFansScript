@@ -3,7 +3,15 @@
 <h1 class="p-2 mb-5 border-b-2 border-t-2 border-black text-center text-2xl font-bold italic">Characters</h1>
 
 <div class="container flex justify-center">
-  <div class="actions mt-5 mb-5 pl-10 pr-10 font-bold text-center text-black bg-yellow-300 rounded border-b-2 border-l-2 border-yellow-500
+  <%= form_tag characters_path, :method => 'get' do %>
+    <%= text_field_tag :search, params[:search], class: "font-bold italic text-center mt-1 text-black bg-gray-300 bg-opacity-90" %>
+    <%= submit_tag "Search", class: "font-bold mt-1 pl-1 pr-1 text-black bg-red-600 rounded border-b-2 border-l-2 border-red-800
+        hover:bg-gray-800 hover:text-gray-200 hover:border-black shadow" %>
+  <%  end %>
+</div>
+
+<div class="container flex justify-center">
+  <div class="actions mt-5 mb-1 pl-10 pr-10 font-bold text-center text-black bg-yellow-300 rounded border-b-2 border-l-2 border-yellow-500
     hover:bg-gray-800 hover:text-gray-200 hover:border-black shadow"> <%= link_to 'Add New Character', new_character_path %>
   </div>
 </div>

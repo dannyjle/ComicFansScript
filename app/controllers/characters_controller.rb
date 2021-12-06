@@ -3,7 +3,7 @@ class CharactersController < ApplicationController
 
   # GET /characters or /characters.json
   def index
-    @characters = Character.all
+    @characters = Character.where(["name LIKE ?", "%#{params[:search]}%"])
     @comics = Comic.all
     @powers = Power.all
   end

@@ -4,6 +4,11 @@
 
 <div class="container flex justify-center">
   <div class="p-5 m-5 bg-gray-300 bg-opacity-90">
+    <div class="container flex justify-center">
+      <% if @power.main_picture.attached? %>
+        <%= image_tag @power.main_picture %>
+      <% end %>
+    </div>
   <ul>
     <li>
       <p class="font-bold p-2">Power Catagory:</p>
@@ -25,11 +30,6 @@
         </li>
       <% end %>
     <% end %>
-    <div class="container flex justify-center">
-      <% if @power.main_picture.attached? %>
-        <%= image_tag @power.main_picture %>
-      <% end %>
-    </div>
   </div>
 </div>
 
